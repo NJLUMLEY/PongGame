@@ -65,28 +65,36 @@ if (this.controls.P2Up.isDown) {
   playerTwo.body.velocity.y = 0;
 }
 
-if (ball.x = 800) {
+if (ball.x >= 778) {
   this.GainPointP1();
+} else if (ball.x == 0) {
+  this.GainPointP2();
 }
 
   },
 
   GainPointP1: function() {
     game.global.P1Score++;  //Increase the score
+    PlayerOneScore.text = 'Player 1: ' + game.global.P1Score;
     ball.x = 400;
     ball.y = 300;
+    ball.body.velocity.x = 0;
+    ball.body.velocity.y = 0;
 
-    if(game.global.P1Score >= 10) { //Does the player have enough points to win?
+    if(game.global.P1Score == 10) { //Does the player have enough points to win?
       this.Win();
     }
   },
 
   GainPointP2: function() {
     game.global.P2Score++;
+    PlayerTwoScore.text = 'Player 2: ' + game.global.P2Score;
     ball.x = 400;
     ball.y = 300;
+    ball.body.velocity.x = 0;
+    ball.body.velocity.y = 0;
 
-    if (game.global.P2Score >= 10) {
+    if (game.global.P2Score == 10) {
     this.Win();
     }
   },

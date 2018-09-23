@@ -10,9 +10,9 @@ var loadState = {
     game.load.image('ball', 'assets/ball.png');
     game.load.image('playerOne', 'assets/paddleOne.png');
     game.load.image('playerTwo', 'assets/paddleTwo.png');
-//    game.load.sound('hit', 'assets/Bounce.wav');
-//    game.load.sound('play', 'assets/PLay.wav');
-//    game.load.sound('win', 'assets/Win.wav');
+//    game.load.audio('hit', 'assets/Bounce.wav');
+//    game.load.audio('play', 'assets/PLay.wav');
+    game.load.audio('win', 'assets/Win.wav');
 
   },
 

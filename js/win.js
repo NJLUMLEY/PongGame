@@ -1,18 +1,23 @@
 var winState = {
-  var winner; 
-  create: function() {
-    //Congratulations text
-    if (game.global.P1Score > game.global.P2Score) {
-      winner = 'Player 2';
-    } else if (game.global.P2Score > game.global.P1Score){
-      winner = 'Player 1';
-    }
 
-    winLabel = game.add.text(80, 80, 'Congratulations!' winner, {font: '50px Arial', fill: '#00ff00'});
+  create: function() {
+
+    winnerSound = game.add.audio('win');
+
+    //Congratulations text
+//    if (game.global.P1Score > game.global.P2Score) {
+//      winner = 'Player 2';
+//    } else if (game.global.P2Score > game.global.P1Score){
+//      winner = 'Player 1';
+//    }
+
+    winLabel = game.add.text(80, 80, 'Congratulations!', {font: '50px Arial', fill: '#00ff00'});
 
     //Show the player their final score
-    scoreLabel = game.add.text(game.world.centerX, game.world.centerY, 'Score: ' + game.global.score, {font: '45px Arial', fill: '#00ff00'});
-    scoreLabel.anchor.setTo(0.5, 0.5);
+   scoreLabelOne = game.add.text(game.world.centerX, game.world.centerY, 'Player 1: ' + game.global.P1Score, {font: '45px Arial', fill: '#00ff00'});
+//   scoreLabelOne.anchor.setTo(0.5, 0.5);
+
+   scoreLabelTwo = game.add.text(150, 150, 'Player 2: ' + game.global.P2Score, {font: '45px Arial', fill: '#00ff00'});
 
     //Add a button to the scene
     button = game.add.button(game.world.centerX, game.world.centerY+100, 'button');
@@ -21,6 +26,10 @@ var winState = {
     text = game.add.text(button.x,button.y,'PLAY AGAIN');
     text.anchor.setTo(0.5,0.5);
   },
+
+  update: function(){
+      winnerSound.play();
+},
 
   restart: function() {
     game.state.start('menu'); //Go to the menu state
