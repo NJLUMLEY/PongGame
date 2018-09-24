@@ -2,7 +2,8 @@ var winState = {
 
   create: function() {
 
-    winnerSound = game.add.audio('win');
+    winnerSound = game.add.audio('win', 1, true);
+    winnerSound.play();
 
     //Congratulations text
 //    if (game.global.P1Score > game.global.P2Score) {
@@ -27,11 +28,10 @@ var winState = {
     text.anchor.setTo(0.5,0.5);
   },
 
-  update: function(){
-      winnerSound.play();
-},
-
   restart: function() {
     game.state.start('menu'); //Go to the menu state
+    winnerSound.stop();
+    game.global.P1Score = 0;
+    game.global.P2Score = 0;
   }
 };

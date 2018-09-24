@@ -11,8 +11,7 @@ game.state.add('win', winState);    //Game over screen
 //Any game spanning variables/settings could be placed here
 game.global = {
 P1Score: 0,
-P2Score: 0,
-SoundCount: 1
+P2Score: 0
 };
 
 //Load the boot state

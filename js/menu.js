@@ -1,5 +1,6 @@
 var menuState = {
   create: function() {
+    
     //Add some title text
     title = game.add.text(game.world.centerX, game.world.centerY-100, 'PONG', {font: '50px Arial', fill: '#00ff00'});
     title.anchor.setTo(0.5, 0.5);
