@@ -81,7 +81,7 @@ if (ball.x >= 778) {
     ball.body.velocity.x = 0;
     ball.body.velocity.y = 0;
 
-    if(game.global.P1Score == 10) { //Does the player have enough points to win?
+    if(game.global.P1Score == 2) { //Does the player have enough points to win?
       this.Win();
     }
   },
