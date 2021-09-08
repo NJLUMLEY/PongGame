@@ -17,7 +17,7 @@ var menuState = {
     //Add a button to the menu
     button = game.add.button(game.world.centerX, game.world.centerY-50, 'button');
     button.anchor.setTo(0.5,0.5);
-    button.onInputUp.add(this.PlayGame); //When the button is clicked, run the start function
+    button.onInputUp.add(this.start); //When the button is clicked, run the start function
     text = game.add.text(button.x,button.y,'SINGLE PLAYER');  //Some text for the button
     text.anchor.setTo(0.5,0.5);
 
